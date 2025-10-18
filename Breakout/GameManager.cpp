@@ -22,6 +22,7 @@ void GameManager::initialize()
     _messagingSystem = new MessagingSystem(_window);
     _ball = new Ball(_window, 400.0f, this); 
     _powerupManager = new PowerupManager(_window, _paddle, _ball);
+    _audioManager = new AudioManager();
     _ui = new UI(_window, _lives, this);
 
     // Create bricks
@@ -115,3 +116,6 @@ UI* GameManager::getUI() const { return _ui; }
 Paddle* GameManager::getPaddle() const { return _paddle; }
 BrickManager* GameManager::getBrickManager() const { return _brickManager; }
 PowerupManager* GameManager::getPowerupManager() const { return _powerupManager; }
+
+AudioManager* GameManager::getAudioManager() const { return _audioManager; }
+
