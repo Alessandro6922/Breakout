@@ -100,6 +100,8 @@ void Ball::update(float dt)
     {
         _direction.x *= -1; // Bounce horizontally
 
+        _gameManager->addScore(10);
+
         _gameManager->getAudioManager()->playSound("Bounce");
         _gameManager->getAudioManager()->adjustPitch("Bounce", currentSoundPitch);
         if (currentSoundPitch <= 2.2f) { currentSoundPitch += pitchIncrement; }
@@ -107,6 +109,8 @@ void Ball::update(float dt)
     else if (collisionResponse == 2)
     {
         _direction.y *= -1; // Bounce vertically
+
+        _gameManager->addScore(10);
 
         _gameManager->getAudioManager()->playSound("Bounce");
         _gameManager->getAudioManager()->adjustPitch("Bounce", currentSoundPitch);

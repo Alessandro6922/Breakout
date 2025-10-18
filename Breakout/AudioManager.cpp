@@ -26,6 +26,5 @@ void AudioManager::adjustPitch(std::string name, float pitch)
 
 
 // TODO
-// Add sound effects on hit
 // add a ball trail
 // add scoring and a leaderboard
