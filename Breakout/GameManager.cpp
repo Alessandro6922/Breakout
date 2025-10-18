@@ -85,8 +85,18 @@ void GameManager::update(float dt)
     }
 
     // move paddle
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) _paddle->moveRight(dt);
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) _paddle->moveLeft(dt);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+            _paddle->moveRight(dt*2);
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+            _paddle->moveLeft(dt*2);
+    }
+    else {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+            _paddle->moveRight(dt);
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+            _paddle->moveLeft(dt);
+    }
 
     // update everything 
     _paddle->update(dt);
